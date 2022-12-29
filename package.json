@@ -1,0 +1,27 @@
+{
+  "name": "org-chart",
+  "version": "1.0.0",
+  "description": "Create an org chart inclusive of manager, employees, and interns.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exzilium/org-chart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exzilium/org-chart/issues"
+  },
+  "homepage": "https://github.com/exzilium/org-chart#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.3.1"
+  }
+}
