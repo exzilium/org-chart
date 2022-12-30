@@ -59,7 +59,7 @@ const chooseEmployee = () => {
   };
 
 // GET ENGINEER
-const getEmployee = () => {
+const getEngineer = () => {
   inquirer
     .prompt([
       {
