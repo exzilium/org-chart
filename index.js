@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 // Global array for storing employee objects
 employeeList = [];
@@ -38,8 +40,8 @@ const getManager = () => {
       console.log(employeeList);
       console.log(employeeList[0].getRole());
 
-      //   // TEMPORARILY DISABLING PATHWAY WHILE TESTING CLASS/SUBCLASS FOR EMPLOYEE + MANAGER
-      //    chooseEmployee();
+      // Add next employee or finish workflow
+      chooseEmployee();
     });
 };
 
@@ -58,6 +60,7 @@ const chooseEmployee = () => {
     .then((answer) => {
       if (answer.emp_type === "Finished") {
         console.log("finished");
+        console.log(employeeList);
         return;
       } else if (answer.emp_type === "Engineer") {
         console.log(answer.emp_type + " has been selected");
@@ -74,28 +77,36 @@ const getEngineer = () => {
   inquirer
     .prompt([
       {
-        name: "emp_name",
+        name: "name",
         type: "input",
         message: "What's the employee's name?",
       },
       {
-        name: "emp_id",
+        name: "id",
         type: "number",
         message: "What's the employee's id?",
       },
       {
-        name: "emp_email",
+        name: "email",
         type: "input",
         message: "What's the employee's email address?",
       },
       {
-        name: "eng_github",
+        name: "github",
         type: "input",
         message: "What's the engineer's Github Username?",
       },
     ])
-    .then((answers) => {
-      console.log("add answer to array and run function" + answers);
+    .then((data) => {
+      // Create new engineer object
+      const engineer = new Engineer(
+        data.name,
+        data.id,
+        data.email,
+        data.github
+      );
+      // push new manager to the employeeList arr
+      employeeList.push(engineer);
       chooseEmployee();
     });
 };
@@ -105,28 +116,31 @@ const getIntern = () => {
   inquirer
     .prompt([
       {
-        name: "emp_name",
+        name: "name",
         type: "input",
         message: "What's the employee's name?",
       },
       {
-        name: "emp_id",
+        name: "id",
         type: "number",
         message: "What's the employee's id?",
       },
       {
-        name: "emp_email",
+        name: "email",
         type: "input",
         message: "What's the employee's email address?",
       },
       {
-        name: "int_school",
+        name: "school",
         type: "input",
         message: "What school does the intern attend?",
       },
     ])
-    .then((answers) => {
-      console.log("add answer to array and run function" + answers);
+    .then((data) => {
+      // Create new intern object
+      const intern = new Intern(data.name, data.id, data.email, data.school);
+      // push new manager to the employeeList arr
+      employeeList.push(intern);
       chooseEmployee();
     });
 };
