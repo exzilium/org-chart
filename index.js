@@ -2,6 +2,9 @@ const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 
+// Global array for storing employee objects
+employeeList = [];
+
 // INIT - GET MANAGER
 const getManager = () => {
   inquirer
@@ -30,7 +33,11 @@ const getManager = () => {
     .then((data) => {
       // Create new manager object
       const manager = new Manager(data.name, data.id, data.email, data.office);
-     
+      // push new manager to the employeeList arr
+      employeeList.push(manager);
+      console.log(employeeList);
+      console.log(employeeList[0].getRole());
+
       //   // TEMPORARILY DISABLING PATHWAY WHILE TESTING CLASS/SUBCLASS FOR EMPLOYEE + MANAGER
       //    chooseEmployee();
     });
