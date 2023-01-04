@@ -3,6 +3,7 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const fs = require("fs");
 
 // Global array for storing employee objects
 employeeList = [];
@@ -61,6 +62,7 @@ const chooseEmployee = () => {
       if (answer.emp_type === "Finished") {
         console.log("finished");
         console.log(employeeList);
+        writeFile();
         return;
       } else if (answer.emp_type === "Engineer") {
         console.log(answer.emp_type + " has been selected");
@@ -145,4 +147,14 @@ const getIntern = () => {
     });
 };
 
+// Write file and exit app
+const writeFile = () => {
+ 
+  let html = 
+ 
+  fs.writeFile;
+  employeeList.forEach((element) => {});
+};
+
+// INIT
 getManager();
