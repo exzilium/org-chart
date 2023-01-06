@@ -1,4 +1,4 @@
-# org-chart
+# Organization Directory
 
 ## Description
 Use this application to create an organzation director inclusive of manager, employees, and interns.
@@ -6,12 +6,12 @@ Use this application to create an organzation director inclusive of manager, emp
 
 ## Screenshots
 ### Team Profile 
-![Team Profile]()
+![Org Directory](./Assets/org-chart-readme.png)
 
 ## Table of Contents
 * [Installation Details](#install)
-* [Technologies Used](#technologies)
 * [Usage Details](#usage)
+* [Technologies](#technologies)
 * [Credits](#credits)
 * [Contributions](#contributions)
 * [License](#license)
@@ -22,18 +22,18 @@ Use this application to create an organzation director inclusive of manager, emp
 1. Clone this repo
 2. npm i
 
+## Usage
+Invoke from the command line with
+> node index
+
+After answering all questions and selecting "Finished," view the output file: `team.html` in the `dist` folder.
+
 ## Technologies
 * Bootstrap
 * Node JS
 * Jest
 * Inquirer
 * HTML
-
-## Usage
-Invoke from the command line with
-> node index
-
-After answering the questions, view the output file: `team.html`
 
 ## Credits
 Teaching Staff at UCLA and my tutor Jose Lopez
