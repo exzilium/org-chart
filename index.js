@@ -4,6 +4,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const fs = require("fs");
+const teamRender =  require('./src/generateHtml')
 
 // Global array for storing employee objects
 employeeList = [];
@@ -19,7 +20,7 @@ const getManager = () => {
       },
       {
         name: "id",
-        type: "number",
+        type: "input",
         message: "What's the manager's id?",
       },
       {
@@ -29,7 +30,7 @@ const getManager = () => {
       },
       {
         name: "office",
-        type: "number",
+        type: "input",
         message: "What's the manager's office number?",
       },
     ])
@@ -85,7 +86,7 @@ const getEngineer = () => {
       },
       {
         name: "id",
-        type: "number",
+        type: "input",
         message: "What's the employee's id?",
       },
       {
@@ -124,7 +125,7 @@ const getIntern = () => {
       },
       {
         name: "id",
-        type: "number",
+        type: "input",
         message: "What's the employee's id?",
       },
       {
@@ -147,14 +148,11 @@ const getIntern = () => {
     });
 };
 
-// Write file and exit app
-const writeFile = () => {
- 
-  let html = 
- 
-  fs.writeFile;
-  employeeList.forEach((element) => {});
-};
+// Write final team.html file with employee array data
+
+function writeFile(){
+  fs.writeFileSync('./dist/team.html', teamRender(employeeList) )
+}
 
 // INIT
 getManager();
