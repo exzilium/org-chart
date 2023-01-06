@@ -39,8 +39,7 @@ const getManager = () => {
       const manager = new Manager(data.name, data.id, data.email, data.office);
       // push new manager to the employeeList arr
       employeeList.push(manager);
-      console.log(employeeList);
-      console.log(employeeList[0].getRole());
+   
 
       // Add next employee or finish workflow
       chooseEmployee();
@@ -61,15 +60,12 @@ const chooseEmployee = () => {
     ])
     .then((answer) => {
       if (answer.emp_type === "Finished") {
-        console.log("finished");
-        console.log(employeeList);
+       
         writeFile();
         return;
       } else if (answer.emp_type === "Engineer") {
-        console.log(answer.emp_type + " has been selected");
         getEngineer();
       } else {
-        console.log(answer.emp_type + " has been selected");
         getIntern();
       }
     });

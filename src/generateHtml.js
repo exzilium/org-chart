@@ -2,7 +2,6 @@
 function renderCards(teamData) {
   // HTML array to join all rendered employee cards
   const finalHtml = [];
-console.log(teamData);
   // Employee functions to generate html cards
 
   // MANAGER
@@ -66,7 +65,6 @@ console.log(teamData);
       .filter((employee) => employee.getRole() === "Manager")
       .map((manager) => managerHtml(manager))
   );
-  console.log(finalHtml);
 
   // Add engineer data to finalHTML
   finalHtml.push(
@@ -74,7 +72,6 @@ console.log(teamData);
       .filter((employee) => employee.getRole() === "Engineer")
       .map((engineer) => engineerHtml(engineer))
   );
-  console.log(finalHtml);
 
   // Add intern data to finalHTML
   finalHtml.push(
@@ -82,7 +79,6 @@ console.log(teamData);
       .filter((intern) => intern.getRole() === "Intern")
       .map((intern) => internHtml(intern))
   );
-  console.log(finalHtml);
 
   return finalHtml.join("");
 }
